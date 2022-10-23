@@ -1,0 +1,14 @@
+name: workflow
+
+on:
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: test run
+    steps:
+      - name: run
+        run: echo "success!"
