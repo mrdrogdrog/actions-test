@@ -11,4 +11,4 @@ jobs:
     name: test run
     steps:
       - name: run
-        run: echo "failure!"
+        run: echo "more sinister failure!"
