@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: test run
-    if: "${{ (github.event_name == 'pull_request_target') !== github.event.pull_request.head.repo.fork  }}"
+    if: "${{ (github.event_name == 'pull_request_target') != github.event.pull_request.head.repo.fork  }}"
     steps:
       - name: run
         run: echo "${{ !!github.event.pull_request && github.event.pull_request.head.sha || github.sha }}"
