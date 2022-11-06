@@ -1,7 +1,7 @@
 name: workflow
 
 on:
-  pull_request_target:
+  pull_request:
     branches: [main]
   push:
     branches: [main]
@@ -12,4 +12,4 @@ jobs:
     name: test run
     steps:
       - name: run
-        run: echo "${{ secrets.SECRET }}"
+        run: echo "${{ !!github.event.pull_request && github.event.pull_request.head.sha || github.sha }}"
